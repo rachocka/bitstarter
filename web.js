@@ -11,7 +11,7 @@ buf = fs.readFileSync(infile);
 
 app.get('/', function(request, response) {
 //  response.send('Hello World 2!');
-    response.send(buf.toString('utf8', 0, buffer.length));
+    response.send(buf.toString('utf8', 0, buf.length));
 //	response.send('Hello');
 });
 
