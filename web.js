@@ -2,16 +2,16 @@ var express = require('express');
 
 var fs = require('fs');
 var infile = "index.html"
-var buf = new Buffer('test');
+var buf = new Buffer(256);
 
 var app = express.createServer(express.logger());
 
 fs.readFileSync(infile, buf);
-var file_data = JSON.stringify(buf);
+
 
 app.get('/', function(request, response) {
 //  response.send('Hello World 2!');
-    response.send(file_data);
+    response.send(buf.toString('utf8', 0, len));
 //	response.send('Hello');
 });
 
